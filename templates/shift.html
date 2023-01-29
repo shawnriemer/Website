@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Moneyball</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="static\test.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+<body>
+
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-sablue w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Moneyball</a>
+    <a href="statcast.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Statcast Leaders</a>
+    <a href="blog.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Articles</a>
+    <a href="bts.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Beat the Streak Predictor</a>
+    <a href="scouting.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Scouting Reports</a>
+    <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">About</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-sablue w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="/" class="w3-bar-item w3-button w3-padding-large">Moneyball</a>
+    <a href="statcast.html" class="w3-bar-item w3-button w3-padding-large">Statcast Leaders</a>
+    <a href="blog.html" class="w3-bar-item w3-button w3-padding-large">Articles</a>
+    <a href="bts.html" class="w3-bar-item w3-button w3-padding-large">Beat the Streak Predictor</a>
+    <a href="scouting.html" class="w3-bar-item w3-button w3-padding-large">Scouting Reports</a>
+    <a href="about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
+  </div>
+</div>
+
+
+<!-- Header -->
+<header class="w3-container w3-sablue w3-center" style="padding:64px 16px">
+  <h1 class="w3-margin w3-jumbo">Shift Ban Winners and Losers</h1>
+</header>
+
+
+<div class="w3-row-padding w3-white w3-padding-64 w3-container">
+  <div class="w3-content">
+
+
+<center><p>The shift has been banned. Shifts are defined as <a href='https://www.mlb.com/glossary/statcast/shifts' target="_blank" rel="noopener noreferrer">here</a></p></center>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div>{{ fig_shift_total|safe }}</div>
+  </div>
+</div>
+
+<center><p>In 2022, 42% of pitches were thrown with a shift behind them.</p></center>
+
+<center><p>How did batters do against each defensive alignment?</p></center>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div>{{ fig_shift_woba|safe }}</div>
+  </div>
+</div>
+
+<center><p>There was very little difference.</p></center>
+
+<center><p>Was there a difference between lefty and righty batters?</p></center>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div>{{ fig_shift_woba_hand|safe }}</div>
+  </div>
+</div>
+
+<center><p>No significant difference against standard defense. Lefties did worse against infield shifts and strategic positions than righties did.</p></center>
+
+<center><p>Are lefties and righties defended differently?</p></center>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div>{{ fig_shift_freq_l_r|safe }}</div>
+  </div>
+</div>
+
+<center><p>Lefties are shifted on two-thirds of time, righties only a quarter. Makes sense based on success against lefties.</p></center>
+
+<center><p>Do certain teams use the shift more?</p></center>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div>{{ fig_shift_freq_pitch_team|safe }}</div>
+  </div>
+</div>
+
+<center><p>The Dodgers and Blue Jays shift the most, the Rockies the least.</p></center>
+
+<center><p>Do certain teams get shifted on more frequently?</p></center>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div>{{ fig_shift_freq_bat_team|safe }}</div>
+  </div>
+</div>
+
+<center><p>The Rangers were shifted on by far the most, the Blue Jays the least.</p></center>
+
+
+
+  </div>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <a href="https://www.instagram.com/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://twitter.com/StatcastAwards"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/shawn-riemer-035741189/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+ </div>
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+
+</body>
+</html>

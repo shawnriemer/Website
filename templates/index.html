@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Moneyball</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="static\test.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="static/statcast_logo.png">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+<body>
+
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-sablue w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Moneyball</a>
+    <a href="statcast.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Statcast Leaders</a>
+    <a href="blog.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Articles</a>
+    <a href="bts.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Beat the Streak Predictor</a>
+    <a href="scouting.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Scouting Reports</a>
+    <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">About</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-sablue w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="/" class="w3-bar-item w3-button w3-padding-large">Moneyball</a>
+    <a href="statcast.html" class="w3-bar-item w3-button w3-padding-large">Statcast Leaders</a>
+    <a href="blog.html" class="w3-bar-item w3-button w3-padding-large">Articles</a>
+    <a href="bts.html" class="w3-bar-item w3-button w3-padding-large">Beat the Streak Predictor</a>
+    <a href="scouting.html" class="w3-bar-item w3-button w3-padding-large">Scouting Reports</a>
+    <a href="about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
+  </div>
+</div>
+
+
+<!-- Header -->
+<header class="w3-container w3-sablue w3-center" style="padding:64px 16px">
+  <h1 class="w3-margin w3-jumbo">Moneyball</h1>
+</header>
+
+
+<!-- Jump To -->
+<div class="w3-row-padding w3-padding-8 w3-container">
+  <div class="w3-content">
+    <br>
+    <table class="w3-table w3-sablue" style="table-layout:fixed">
+      <tr>
+        <td class="w3-hover-bluegold w3-padding-large w3-large" style="border:10px solid white"><a href="#statcast" style="text-decoration:none">Statcast Leaders</a></td>
+        <td class="w3-hover-bluegold w3-padding-large w3-large" style="border:10px solid white"><a href="#quote" style="text-decoration:none">Quote</a></td>
+        <td class="w3-hover-bluegold w3-padding-large w3-large" style="border:10px solid white"><a href="#blog" style="text-decoration:none">Articles</a></td>
+        <td class="w3-hover-bluegold w3-padding-large w3-large" style="border:10px solid white"><a href="#bts" style="text-decoration:none">Beat the Streak</a></td>
+      </tr>
+    </table>
+  </div>
+  <a name="statcast"></a>
+</div>
+
+
+<!-- Statcast Leaders -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <!-- Statcast Header-->
+  <center><h1>Statcast Leaders</h1></center><br>
+  <div class="w3-content">
+    <div class="">
+      <table class="w3-table w3-striped w3-white">
+        <tr>
+          <th colspan="2" style="width:40%" style="text-align: center">Yesterday</th>
+          <th style="width:20%">Category</th>
+          <th colspan="2" style="width:40%">Season</th>
+        </tr>
+          <tr>
+            <td>{{ homer_long_yd_name }}</td>
+            <td>{{ homer_long_yd_num }} <small>feet</small></td>
+            <th>Longest Homer</th>
+            <td>{{ homer_long_season_name }}</td>
+            <td>{{ homer_long_season_num }} <small>feet</small></td>
+          </tr>
+          <tr>
+            <td>{{ homer_short_yd_name }}</td>
+            <td>{{ homer_short_yd_num }} <small>feet</small></td>
+            <th>Shortest Homer</th>
+            <td>{{ homer_short_season_name }}</td>
+            <td>{{ homer_short_season_num }} <small>feet</small></td>
+          </tr>
+          <tr>
+            <td>{{ pitch_fast_yd_name }}</td>
+            <td>{{ pitch_fast_yd_num }} <small>mph</small></td>
+            <th>Fastest Pitch</th>
+            <td>{{ pitch_fast_season_name }}</td>
+            <td>{{ pitch_fast_season_num }} <small>mph</small></td>
+          </tr>
+          <tr>
+            <td>{{ pitch_slow_yd_name }}</td>
+            <td>{{ pitch_slow_yd_num }} <small>mph</small></td>
+            <th>Slowest Pitch</th>
+            <td>{{ pitch_slow_season_name }}</td>
+            <td>{{ pitch_slow_season_num }} <small>mph</small></td>
+          </tr>
+          <tr>
+            <td>{{ ev_high_yd_name }}</td>
+            <td>{{ ev_high_yd_num }} <small>mph</small></td>
+            <th>Highest Exit Velocity</th>
+            <td>{{ ev_high_season_name }}</td>
+            <td>{{ ev_high_season_num }} <small>mph</small></td>
+          </tr>
+          <tr>
+            <td>{{ ev_low_yd_name }}</td>
+            <td>{{ ev_low_yd_num }} <small>mph</small></td>
+            <th>Lowest Exit Velocity</th>
+            <td>{{ ev_low_season_name }}</td>
+            <td>{{ ev_low_season_num }} <small>mph</small></td>
+          </tr>
+        </table>
+    </div>
+  </div>
+  <br><center><a href="statcast.html"><button class="w3-button w3-sablue w3-hover-bluegold w3-padding-large w3-large w3-margin-top">See More</button></a></center>
+  <a name="quote"></a>
+</div>
+
+
+<!-- Quote Box -->
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+  <h1 class="w3-margin w3-xlarge">{{ quote }}</h1>
+  <p><a href="{{ link }}" class="w3-hover-goldgrey" style="text-decoration:none">-{{ author }}</a></p>
+  <a name="blog"></a>
+</div>
+
+
+<!-- Articles & Tweets -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+  <div class="w3-twothird">
+  <center><h1>Recent Articles</h1></center>
+
+  <!-- Blog entry #1 -->
+  <div class="w3-margin w3-white">
+    <img src="static/baseball.png" alt="Baseball" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Building a Playoff Winner</b></h3>
+      <h5>How does roster construction impact results come October?<br><span class="w3-opacity">November 1, 2022</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><a href="roster.html"><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE</b></button></a></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments</b> <span class="w3-tag">0</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Blog entry #2 -->
+  <div class="w3-margin w3-white">
+  <img src="static/glove.png" alt="Glove" style="width:100%">
+    <div class="w3-container">
+      <h3><b>ABS Winners and Losers</b></h3>
+      <h5>Which players will benefit most from the introduction of an automated strikezone?<br><span class="w3-opacity">January 1, 2023</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><a href="abs.html"><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE</b></button></a></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments</b> <span class="w3-badge">2</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+    <div class="w3-third">
+      <center><h1>@StatcastAwards</h1></center>
+      <center><blockquote class="twitter-tweet"><p lang="en" dir="ltr">The Houston Astros are 2022 World Series Champions🏆<br><br>WS Game 6 - (11/5/22)<br>Phillies @ Astros<a href="https://twitter.com/hashtag/RingTheBell?src=hash&amp;ref_src=twsrc%5Etfw">#RingTheBell</a><a href="https://twitter.com/hashtag/LevelUp?src=hash&amp;ref_src=twsrc%5Etfw">#LevelUp</a><a href="https://twitter.com/hashtag/WorldSeries?src=hash&amp;ref_src=twsrc%5Etfw">#WorldSeries</a> <a href="https://t.co/Fjmli4xVXw">pic.twitter.com/Fjmli4xVXw</a></p>&mdash; Statcast Awards (@StatcastAwards) <a href="https://twitter.com/StatcastAwards/status/1589297113917435904?ref_src=twsrc%5Etfw">November 6, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Scouting Reports -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+
+    <div class="w3-half">
+      <h1>Scouting Reports</h1>
+      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <div class="w3-half w3-center">
+      <i class="fa fa-anchor w3-padding-64 w3-text-sablue"></i>
+    </div>
+
+  </div>
+  <a name="bts"></a>
+</div>
+
+
+<!-- BTS Predictor -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <i class="fa fa-coffee w3-padding-64 w3-text-sablue w3-margin-right"></i>
+    </div>
+
+    <div class="w3-twothird">
+      <h1>MLB.com Beat the Streak Predictor</h1>
+      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+
+      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <a href="https://www.instagram.com/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://twitter.com/StatcastAwards"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/shawn-riemer-035741189/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+ </div>
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
+
+
+
+

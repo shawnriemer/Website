@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Scouting</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="static\test.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="static/statcast_logo.png">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px Arial;  
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+input[type=submit] {
+  color:#ffc000;
+  background-color:#2f5597;
+  cursor: pointer}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+
+</style>
+</head>
+<body>
+
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-sablue w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Moneyball</a>
+    <a href="statcast.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Statcast Leaders</a>
+    <a href="blog.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Articles</a>
+    <a href="bts.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Beat the Streak Predictor</a>
+    <a href="scouting.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">Scouting Reports</a>
+    <a href="about.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-bluegold">About</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-sablue w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="/" class="w3-bar-item w3-button w3-padding-large">Moneyball</a>
+    <a href="statcast.html" class="w3-bar-item w3-button w3-padding-large">Statcast Leaders</a>
+    <a href="blog.html" class="w3-bar-item w3-button w3-padding-large">Articles</a>
+    <a href="bts.html" class="w3-bar-item w3-button w3-padding-large">Beat the Streak Predictor</a>
+    <a href="scouting.html" class="w3-bar-item w3-button w3-padding-large">Scouting Reports</a>
+    <a href="about.html" class="w3-bar-item w3-button w3-padding-large">About</a>
+  </div>
+</div>
+
+
+<!-- Header -->
+<header class="w3-container w3-sablue w3-center" style="padding:64px 16px">
+  <h1 class="w3-margin w3-jumbo">Scouting Reports</h1>
+</header>
+
+
+<!-- Input Area -->
+<br>
+<center>
+  <form autocomplete="off" action="" method="post">
+    <div class="autocomplete" style="width:300px;">
+      <input id="player" type="text" name="player" placeholder="Seiya Suzuki">
+    </div>
+    <input type="submit" class="w3-sablue w3-hover-bluegold">
+  </form>
+</center>
+
+
+<!-- <br>
+<center>
+  <form action="" method="post">
+    <label for="player">Player: </label>
+    <input type="text" id="player" name="player" placeholder="Seiya Suzuki">&nbsp;&nbsp;
+    
+    <input type="radio" id="WOBA" name="metric" value="WOBA" checked>
+    <label for="html">WOBA</label>&nbsp;
+    <input type="radio" id="BA" name="metric" value="BA">
+    <label for="css">BA</label>&nbsp;
+    <input type="radio" id="OBS" name="metric" value="OBS">
+    <label for="javascript">OBS</label>&nbsp;
+    <input type="radio" id="OPS" name="metric" value="OPS">
+    <label for="javascript">OPS</label><br><br>
+
+    <input type="submit" value="Submit">
+  </form>
+</center><br> -->
+
+
+<br><br>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div>{{ fig|safe }}</div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <a href="https://www.instagram.com/"><i class="fa fa-instagram w3-hover-opacity"></i></a>
+    <a href="https://twitter.com/StatcastAwards"><i class="fa fa-twitter w3-hover-opacity"></i></a>
+    <a href="https://www.linkedin.com/in/shawn-riemer-035741189/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+ </div>
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+
+<!-- Input Box AutoComplete -->
+<script>
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].substr(val.length);
+          /*insert a input field that will hold the current array item's value:*/
+          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+          /*execute a function when someone clicks on the item value (DIV element):*/
+          b.addEventListener("click", function(e) {
+              /*insert the value for the autocomplete text field:*/
+              inp.value = this.getElementsByTagName("input")[0].value;
+              /*close the list of autocompleted values,
+              (or any other open lists of autocompleted values:*/
+              closeAllLists();
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+  /*execute a function when someone clicks in the document:*/
+  document.addEventListener("click", function (e) {
+      closeAllLists(e.target);
+  });
+}
+
+/*An array containing all the country names in the world:*/
+var players = [
+'Alek Thomas','Buddy Kennedy','Carson Kelly','Christian Walker','Cooper Hummel','Corbin Carroll','Daulton Varsho','Emmanuel Rivera','Geraldo Perdomo', 'Jake McCarthy','Jordan Luplow','Josh Rojas','Ketel Marte','Pavin Smith','Sergio Alcantara','Stone Garrett',
+'Austin Riley','Dansby Swanson','Eddie Rosario','Ehire Adrianza','Guillermo Heredia','Marcell Ozuna','Matt Olson','Michael Harris','Orlando Arcia','Robbie Grossman','Ronald Acuna',"Travis d'Arnaud",'Vaughn Grissom','William Contreras',
+'Alfonso Rivas','Christopher Morel','David Bote','Esteban Quiroz','Franmil Reyes','Ian Happ','Jared Young','Michael Hermosillo','Nelson Velázquez','Nico Hoerner','PJ Higgins','Patrick Wisdom','Seiya Suzuki','Willson Contreras','Yan Gomes','Zach McKinstry',
+'Alejo Lopez','Aramis Garcia','Aristides Aquino','Austin Romine','Chuckie Robinson','Donovan Solano','Jake Fraley','Jonathan India','Jose Barrero','Kyle Farmer','Matt Reynolds','Mike Siani','Nick Senzel','Spencer Steer','Stuart Fairchild','TJ Friedl',
+'Alan Trejo','Brendan Rodgers','Brian Serven','C. J. Cron','Charlie Blackmon','Connor Joe','Elehuris Montero','Elias Diaz','Ezequiel Tovar','Garrett Hampson','José Iglesias','Michael Toglia','Randal Grichuk','Ryan McMahon','Sean Bouchard','Yonathan Daza',
+'Austin Barnes','Chris Taylor','Cody Bellinger','Freddie Freeman','Gavin Lux','Hanser Alberto','Joey Gallo','Justin Turner','Max Muncy','Miguel Vargas','Mookie Betts','Trayce Thompson','Trea Turner','Will Smith',
+'Avisail Garcia','Brian Anderson','Bryan De La Cruz','Charles Leblanc','Garrett Cooper','JJ Bleday','Jacob Stallings','Jesus Sanchez','Joey Wendle','Jon Berti','Jordan Groshans','Lewin Diaz','Luke Williams','Miguel Rojas','Nick Fortes','Peyton Burdick',
+'Andrew McCutchen','Christian Yelich','Garrett Mitchell','Hunter Renfroe','Jace Peterson','Keston Hiura','Kolten Wong','Luis Urias','Mike Brosseau','Omar Narvaez','Rowdy Tellez','Tyrone Taylor','Victor Caratini','Willy Adames',
+'Brandon Nimmo','Dan Vogelbach','Darin Ruf','Eduardo Escobar','Francisco Lindor','Francisco Álvarez','James McCann','Jeff McNeil','Luis Guillorme','Mark Canha','Mark Vientos','Pete Alonso','Starling Marte','Terrance Gore','Tomás Nido','Tyler Naquin',
+'Ben Gamel','Bryan Reynolds','Cal Mitchell','Diego Castillo','Greg Allen','Jack Suwinski','Jason Delay','Ji Hwan Bae','Jose Godoy',"Ke'Bryan Hayes",'Kevin Newman','Michael Chavis','Miguel Andujar','Oneil Cruz','Rodolfo Castro','Tucupita Marcano','Tyler Heineman','Zack Collins',
+'Alec Bohm','Brandon Marsh','Bryce Harper','Bryson Stott','Dalton Guthrie','Darick Hall','Edmundo Sosa','Garrett Stubbs','J. T. Realmuto','Jean Segura','Kyle Schwarber','Matt Vierling','Nick Castellanos','Nick Maton','Rhys Hoskins',
+'Austin Nola','Brandon Dixon','Brandon Drury','Ha-Seong Kim','Jake Cronenworth','Jorge Alfaro','Jose Azocar','Josh Bell','Juan Soto','Jurickson Profar','Luis Campusano','Manny Machado','Trent Grisham','Wil Myers',
+'Albert Pujols','Alec Burleson','Andrew Knizner','Ben DeLuzio','Brendan Donovan','Corey Dickerson','Dylan Carlson','Juan Yepez','Lars Nootbaar','Nolan Arenado','Nolan Gorman','Paul DeJong','Paul Goldschmidt','Tommy Edman','Yadier Molina',
+'Alex Call','CJ Abrams','Cesar Hernandez','Ildemaro Vargas','Israel Pineda','Joey Meneses','Josh Palacios','Lane Thomas','Luis Garcia','Luke Voit','Riley Adams','Tres Barrera','Victor Robles',
+'Adley Rutschman','Anthony Santander','Austin Hays','Cedric Mullins','Gunnar Henderson','Jesus Aguilar','Jorge Mateo','Kyle Stowers','Ramon Urias','Robinson Chirinos','Rougned Odor','Ryan McKenna','Ryan Mountcastle','Terrin Vavra','Tyler Nevin',
+'Abraham Almonte','Alex Verdugo','Bobby Dalbec','Christian Arroyo','Connor Wong','Enrique Hernandez','Eric Hosmer','J. D. Martinez','Jarren Duran','Rafael Devers','Reese McGuire','Rob Refsnyder','Tommy Pham','Triston Casas','Xander Bogaerts','Yu Chang',
+'AJ Pollock','Adam Engel','Andrew Vaughn','Carlos Perez','Eloy Jiménez','Elvis Andrus','Gavin Sheets','Josh Harrison','José Abreu','Mark Payton','Romy Gonzalez','Seby Zavala','Yasmani Grandal','Yoan Moncada',
+'Amed Rosario','Andres Gimenez','Austin Hedges','Bo Naylor','Gabriel Arias','Jose Ramirez','Josh Naylor','Luke Maile','Myles Straw','Oscar Gonzalez','Owen Miller','Richie Palacios','Steven Kwan','Tyler Freeman','Will Benson','Will Brennan',
+'Akil Baddoo','Brendon Davis','Eric Haase','Harold Castro','Javier Baez','Jeimer Candelario','Jonathan Schoop','Kerry Carpenter','Kody Clemens',
+ 'Miguel Cabrera','Riley Greene','Ryan Kreidler','Spencer Torkelson','Tucker Barnhart','Victor Reyes','Willi Castro',
+'Aledmys Díaz','Alex Bregman','Chas McCormick','Christian Vazquez','David Hensley','Jake Meyers','Jeremy Pena','Jose Altuve','Kyle Tucker','Martin Maldonado','Mauricio Dubon','Trey Mancini','Yainer Diaz','Yordan Alvarez','Yuli Gurriel',
+'Bobby Witt','Drew Waters','Edward Olivares','Hunter Dozier','Kyle Isbel','MJ Melendez','Michael Massey','Michael Taylor','Nate Eaton','Nicky Lopez',"Ryan O'Hearn",'Salvador Perez','Sebastian Rivero','Vinnie Pasquantino',
+'Billy Hamilton','Caleb Hamilton','Carlos Correa','Gary Sanchez','Gilberto Celestino','Gio Urshela','Jake Cave','Jermaine Palacios','Jose Miranda','Luis Arraez','Mark Contreras','Matt Wallner','Nick Gordon','Ryan Jeffers','Sandy Leon',
+'Aaron Hicks','Aaron Judge','Anthony Rizzo','DJ LeMahieu','Giancarlo Stanton','Gleyber Torres','Harrison Bader','Isiah Kiner-Falefa','Jose Trevino','Josh Donaldson','Kyle Higashioka','Marwin Gonzalez','Matt Carpenter','Oswald Peraza','Oswaldo Cabrera','Tim Locastro',
+'Anthony Rendon','David Fletcher','Jo Adell','Kurt Suzuki','Livan Soto',"Logan O'Hoppe",'Luis Rengifo','Magneuris Sierra','Matt Duffy','Matt Thaiss','Max Stassi','Michael Stefanic','Mickey Moniak','Mike Ford','Mike Trout','Shohei Ohtani','Taylor Ward',
+'Chad Pinder','Conner Capel','Cristian Pache','Dermis Garcia','Ernie Clement','Jonah Bride','Jordan Diaz','Nick Allen','Sean Murphy','Seth Brown','Shea Langeliers','Sheldon Neuse','Stephen Vogt','Tony Kemp','Vimael Machin',
+'Abraham Toro','Adam Frazier',"Brian O'Keefe",'Cal Raleigh','Carlos Santana','Curt Casali','Dylan Moore','Eugenio Suarez','J. P. Crawford','Jarred Kelenic','Jesse Winker','Julio Rodriguez','Luis Torrens','Mitch Haniger','Sam Haggerty','Taylor Trammell','Ty France',
+'Christian Bethancourt','David Peralta','Francisco Mejia','Harold Ramirez','Isaac Paredes','Ji-Man Choi','Jonathan Aranda','Jose Siri','Manuel Margot','Miles Mastrobuoni','Randy Arozarena','Rene Pinto','Taylor Walls','Vidal Brujan','Wander Franco','Yandy Díaz',
+'Adolis García','Bubba Thompson','Charlie Culberson','Corey Seager','Jonah Heim','Josh Jung','Josh Smith','Kevin Plawecki','Kole Calhoun','Leody Taveras','Marcus Semien','Mark Mathias','Nathaniel Lowe','Sam Huff',
+'Alejandro Kirk','Bo Bichette','Bradley Zimmer','Cavan Biggio','Danny Jansen','Gabriel Moreno','George Springer','Jackie Bradley','Matt Chapman', 'Otto Lopez','Raimel Tapia','Santiago Espinal','Teoscar Hernandez','Vladimir Guerrero','Whit Merrifield'
+];
+
+/*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("player"), players);
+</script>
+
+
+</body>
+</html>

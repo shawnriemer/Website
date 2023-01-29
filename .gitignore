@@ -1,0 +1,14 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# archive directories:
+archive/
+
+# large file with graph html
+saved_figs.json
+
+# Jupyter Notebook
+*.ipynb_checkpoints
+
